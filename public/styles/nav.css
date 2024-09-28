@@ -1,0 +1,39 @@
+nav {
+  background-color: var(--dark-blue); 
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+}
+
+nav a {
+  color: var(--dark-brown); 
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; 
+}
+
+nav a:hover {
+  color: var(--dark-blue); 
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column; 
+      text-align: center;
+  }
+
+  nav a {
+      margin: 10px 0;
+  }
+}

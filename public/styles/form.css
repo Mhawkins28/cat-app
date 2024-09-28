@@ -1,0 +1,85 @@
+:root {
+  --dark-blue: rgba(10, 51, 80, 0.727);
+  --blue-gray: rgba(53, 96, 103, 0.478);
+  --taupe: rgba(145, 138, 127, 0.877);
+  --dark-brown: rgba(29, 26, 24, 0.909);
+  --button-green: darkslategray;
+  --light-taupe: rgba(220, 220, 210, 0.9);
+}
+
+.header {
+  text-align: center;
+  color: var(--dark-brown);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--light-taupe);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+form label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--dark-brown);
+}
+
+form input[type="text"],
+form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--blue-gray);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+  border-color: var(--dark-blue);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  align-self: flex-start;
+}
+
+button[type="submit"] {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgba(10, 51, 80, 0.9);
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+  }
+}

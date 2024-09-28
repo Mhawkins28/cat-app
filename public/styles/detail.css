@@ -1,0 +1,140 @@
+:root {
+  --dark-blue:  rgba(10, 51, 80, 0.727);
+  --blue-gray: rgba(53, 96, 103, 0.478);
+  --taupe: rgba(145, 138, 127, 0.877);
+  --dark-brown: rgba(29, 26, 24, 0.909);
+  --button-green: darkslategray;
+  --light-taupe: rgba(220, 220, 210, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-taupe)
+}
+
+.detail-container {
+  font-family: 'Arial', sans-serif;
+  color: var(--dark-brown); 
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cat-name {
+  font-size: 2.15em;
+  
+}
+
+.cat-profile {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: var(--dark-blue);  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.image-section {
+  flex: 1;
+  max-width: 40%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%; 
+  max-width: 300px; 
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.info-section {
+  flex: 1.5;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-size: 1.18em;
+  margin-bottom: 15px;
+  color: var(--dark-brown);
+  text-align: center;
+  font-weight: 600;
+}
+
+.cuddles {
+  width: 80%
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-item {
+  padding: 10px;
+  background-color:var(--taupe) ;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-item .label {
+  font-weight: bold;
+  color: var(--dark-brown);
+}
+
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 10px;
+  min-width: 300px; 
+  background-color: var(--button-green); 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center; 
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+button:hover:hover {
+  background-color: var(--dark-blue); 
+}
+
+.delete-btn {
+  background-color: #933e35;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}

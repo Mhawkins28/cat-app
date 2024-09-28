@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <title>Add New Cat</title>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <h1 class="header">Tell us about your cat!</h1>
+    <form action="/cats" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required />
+        </div>
+        <div>
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="nickname" id="nickname" />
+        </div>
+        <div>
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed" id="breed" />
+        </div>
+        <div>
+            <label for="birthday">Age:</label>
+            <input type="date" name="birthday" id="birthday" />
+        </div>
+        <div>
+            <label for="likesPets">Do they like pets?:</label>
+            <input type="checkbox" name="likesPets" id="likesPets" />
+        </div>
+        <div>
+            <label for="description">Tell us a little about your cat:</label>
+            <textarea name="description" id="description"></textarea>
+        </div>
+        <div>
+            <label for="image">Show us your cat!:</label>
+            <input type="text" name="image" id="image" />
+        </div>
+        <div>
+            <label for="humanName">Who does the cat own?:</label>
+            <input type="text" name="humanName" id="humanName" />
+        </div>
+        <button type="submit">Add a cat!</button>
+    </form>
+</body>
+</html>

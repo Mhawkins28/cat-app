@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Gallery</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <%- include('../partials/nav') %>
+
+  <div class="cats-container">
+    <% cats.forEach(cat => { %>
+      <div class="cat-card">
+        <a href="/cats/<%= cat._id %>">
+          <img src="<%= cat.image %>" alt="image of <%= cat.name %>" class="cat-image">
+        </a>
+        <a href="/cats/<%= cat._id %>" class="cat-name"><%= cat.name %></a>
+      </div>
+    <% }); %>
+  </div>
+  
+  <a href="/cats/new" class="add-cat-btn">Add a new furry friend!</a>
+</body>
+</html>

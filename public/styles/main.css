@@ -1,0 +1,85 @@
+:root {
+  --dark-blue:  rgba(10, 51, 80, 0.727);
+  --blue-gray: rgba(53, 96, 103, 0.478);
+  --taupe: rgba(145, 138, 127, 0.877);
+  --dark-brown: rgba(29, 26, 24, 0.909);
+  --button-green: darkslategray;
+  --light-taupe: rgba(220, 220, 210, 0.9);
+}
+
+body {
+  background-color: var(--light-taupe)
+}
+.cats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.cat-card {
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+}
+
+.cat-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.cat-name {
+  display: block;
+  padding: 15px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--dark-brown);
+  font-weight: bold;
+}
+
+.cat-name:hover {
+  color: var(--dark-blue);
+}
+
+
+.add-cat-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: darkslategray;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-cat-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+
+@media (max-width: 768px) {
+  .cat-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cat-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <title>Update Your Cat's Records</title>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <h1 class="header">Edit your cat's details!</h1>
+    <form method="POST" action="/cats/<%= cat._id %>?_method=PUT">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="<%= cat.name %>" required />
+        </div>
+        <div>
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="nickname" id="nickname" value="<%= cat.nickname %>" />
+        </div>
+        <div>
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed" id="breed" value="<%= cat.breed %>" />
+        </div>
+        <div>
+            <label for="birthday">Birthday:</label>
+            <input type="date" name="birthday" id="birthday" value="<%= cat.birthday ? cat.birthday.toISOString().split('T')[0] : '' %>" />
+        </div>
+        <div>
+            <label for="likesPets">Do they like pets?:</label>
+            <input type="checkbox" name="likesPets" id="likesPets" <%= cat.likesPets ? 'checked' : '' %> />
+        </div>
+        <div>
+            <label for="description">Tell us a little about your cat:</label>
+            <textarea name="description" id="description"><%= cat.description %></textarea>
+        </div>
+        <div>
+            <label for="image">Show us your cat!:</label>
+            <input type="text" name="image" id="image" value="<%= cat.image %>" />
+        </div>
+        <div>
+            <label for="humanName">Who does this cat own?:</label>
+            <input type="text" name="humanName" id="humanName" value="<%= cat.humanName %>" />
+        </div>
+        <button type="submit">Update <%= cat.name %>'s records</button>
+    </form>
+</body>
+</html>
