@@ -12,9 +12,9 @@ const getAllCats = async (req, res) => {
 };
 
 const calculateAge = (birthday) => {
-  const diff = Date.now() - new Date(birthday).getTime(); // Difference in milliseconds
-  const ageDate = new Date(diff); // Convert the difference to a Date object
-  return Math.abs(ageDate.getUTCFullYear() - 1970); // Calculate the year difference from the epoch
+  const diff = Date.now() - new Date(birthday).getTime(); 
+  const ageDate = new Date(diff); 
+  return Math.abs(ageDate.getUTCFullYear() - 1970); 
 };
 
 const getOneCat = async (req, res) => {

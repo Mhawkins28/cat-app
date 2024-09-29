@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv"); 
 const mongoose = require("mongoose");
 const catController = require("./controllers/cats.js");
+const commentsController = require("./controllers/comments.js");
 
 const methodOverride = require("method-override");
 const morgan = require("morgan");
@@ -40,6 +41,8 @@ app.delete("/cats/:id", catController.deleteCat);
 app.get("/cats/:id/edit", catController.getEditForm);
 app.put("/cats/:id", catController.editCat);
 
+app.post("/cats/:catId/comments", commentsController.createComment)
+app.delete('/cats/:catId/comments/:commentId', commentsController.deleteComment)
 
 
 app.listen(PORT, () => {

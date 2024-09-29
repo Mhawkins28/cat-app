@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/detail.css" />
     <title>Cat Detail Page</title>
-  </head>
-  <body>
+</head>
+<body>
     <%- include('../partials/nav') %>
     <div class="detail-container">
-      <h1 class="cat-name"><%= cat.name %></h1>
-      <section class="cat-profile">
-        <section class="image-section">
-          <div class="image-container">
-            <img src="<%= cat.image %>" alt="image of <%= cat.name %>" />
-          </div>
+        <h1 class="cat-name"><%= cat.name %></h1>
+        <section class="cat-profile">
+            <section class="image-section">
+                <div class="image-container">
+                    <img src="<%= cat.image %>" alt="image of <%= cat.name %>" />
+                </div>
+            </section>
+            <section class="info-section">
+                <p class="description"><%= cat.description %></p>
+                <div class="details">
+                    <div class="detail-item">
+                        <span class="label">Nickname:</span>
+                        <span><%= cat.nickname %></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Breed:</span>
+                        <span><%= cat.breed %></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Age:</span>
+                        <span><%= age %> years</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Cat's Human:</span>
+                        <span><%= cat.humanName %></span>
+                    </div>
+                    <div class="detail-item cuddles">
+                        <span class="label">Cuddle Status:</span>
+                        <% if (cat.likesPets) { %>
+                            <span>I love to cuddle!</span>
+                        <% } else { %>
+                            <span>I prefer to be observed, like a museum art piece!</span>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
         </section>
-        <section class="info-section">
-          <p class="description"><%= cat.description %></p>
-          <div class="details">
-            <div class="detail-item">
-              <span class="label">Nickname:</span>
-              <span><%= cat.nickname %></span>
-            </div>
-            <div class="detail-item">
-              <span class="label">Breed:</span> <span><%= cat.breed %></span>
-            </div>
-            <div class="detail-item">
-              <span class="label">Age:</span> <span><%= age %> years</span>
-            </div>
-            <div class="detail-item">
-              <span class="label">Cat's Human:</span>
-              <span><%= cat.humanName %></span>
-            </div>
-            <div class="detail-item cuddles">
-              <span class="label">Cuddle Status:</span>
-              <% if (cat.likesPets) { %>
-              <span>I love to cuddle!</span>
-              <% } else { %>
-              <span>I prefer to be observed, like a museum art piece!</span>
-              <% } %>
-            </div>
-          </div>
-        </section>
+
+        <!-- Display Comments Section -->
+        <section class="display-comments">
+          <h2>Comments</h2>
+          <% if (cat.comments.length > 0) { %>
+              <% cat.comments.forEach(function(comment) { %>
+                  <div class="comment">
+                      <p class="comment-text"><%= comment.comment %></p>
+                      <p class="comment-author">Posted by: <%= comment.uploadedBy %></p>
+                      <form method="POST" action="/cats/<%= cat._id %>/comments/<%= comment._id %>?_method=DELETE" class="delete-comment-form">
+                          <button type="submit" class="delete-comment-btn">Delete</button>
+                      </form>
+                  </div>
+              <% }) %>
+          <% } else { %>
+              <p>No comments yet. Be the first to comment!</p>
+          <% } %>
       </section>
-      <div class="actions">
-      <form method="POST" action="/cats/<%= cat._id %>?_method=DELETE">
-        <button type="submit" class="delete-btn">Delete this cat</button>
-        </form>
-        <div class="update-link">
-          <a href="/cats/<%= cat._id %>/edit" class="edit-btn"><button>Update Cat's Records</button></a>
+
+        <!-- Comment Form Section -->
+        <section class="comment-section">
+            <h2>Leave a Comment</h2>
+            <form method="POST" action="/cats/<%= cat._id %>/comments">
+                <div>
+                    <label for="comment">Comment:</label>
+                    <textarea name="comment" id="comment" rows="4" required></textarea>
+                </div>
+                <div>
+                    <label for="uploadedBy">Your Name:</label>
+                    <input type="text" name="uploadedBy" id="uploadedBy" required />
+                </div>
+                <button type="submit" class="submit-btn">Submit Comment</button>
+            </form>
+        </section>
+
+        <div class="actions">
+            <form method="POST" action="/cats/<%= cat._id %>?_method=DELETE">
+                <button type="submit" class="delete-btn">Delete this cat</button>
+            </form>
+            <div class="update-link">
+                <a href="/cats/<%= cat._id %>/edit" class="edit-btn">
+                    <button>Update Cat's Records</button>
+                </a>
+            </div>
         </div>
-      </div>
     </div>
-  </body>
+</body>
 </html>

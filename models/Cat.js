@@ -1,5 +1,12 @@
 const mongoose = require('mongoose')
 
+const commentSchema = new mongoose.Schema({ 
+    comment: { type: String, require: true},
+    uploadedBy: { type: String, default: "Guest" },
+    createdAt: { type: Date, default: Date.now }
+})
+
+
 const catSchema = new mongoose.Schema({
     name: { type: String, required: true }, 
     nickname: { type: String },
@@ -8,7 +15,8 @@ const catSchema = new mongoose.Schema({
     likesPets: { type: Boolean, required: true },
     description: { type: String, required: true},
     image: { type: String, required: true },
-    humanName: { type: String }
+    humanName: { type: String },
+    comments: [commentSchema]
 }) 
 
 

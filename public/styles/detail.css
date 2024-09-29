@@ -26,7 +26,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .cat-name {
@@ -136,5 +135,105 @@ button:hover:hover {
 }
 
 .delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.comment-section {
+  background-color: var(--dark-blue); 
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-section h2 {
+  color: var(--dark-brown);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comment-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-section label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--dark-brown);
+}
+
+.comment-section textarea,
+.comment-section input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--blue-gray);
+  border-radius: 8px;
+  background-color: var(--light-taupe);
+  color: var(--dark-brown);
+}
+
+.comment-section textarea:focus,
+.comment-section input[type="text"]:focus {
+  border-color: var(--button-green);
+  outline: none;
+}
+
+.submit-btn {
+  background-color: var(--button-green);
+  color: white;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--dark-blue);
+}
+
+.display-comments {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 8px 9px 11px 3px rgba(0, 0, 0, 0.1)
+}
+
+.comment {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  border-bottom: 1px solid var(--blue-gray);
+  padding: 10px 0;
+}
+
+.comment-text {
+  margin: 5px 0;
+  color: var(--dark-brown);
+  margin-right: 20px;
+  font-weight: bold
+}
+
+.comment-author {
+  color: var(--dark-blue);
+  margin-right: 20px; 
+}
+
+.delete-comment-btn {
+  background-color: #933e35;
+  width: 200px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-comment-btn:hover {
   background-color: #c0392b;
 }
